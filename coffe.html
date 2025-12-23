@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        *,
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Top Section */
+        .top-section {
+            background: linear-gradient(to right, hwb(0 1% 99%), rgba(255, 255, 255, 0.3)),
+                url(https://static.vecteezy.com/system/resources/thumbnails/040/725/746/small_2x/ai-generated-flat-layout-cup-of-coffee-with-coffee-beans-on-a-dark-surface-photo.jpg);
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            width: 100%;
+            height: 600px;
+            padding-bottom: 50px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 60px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #efab44;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-list li {
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .nav-list li:hover {
+            color: #f4c10f;
+        }
+
+        .social-header {
+            display: flex;
+            gap: 20px;
+            font-size: 18px;
+        }
+
+        .social-header i {
+            cursor: pointer;
+        }
+
+        .social-header i:hover {
+            color: #f4c10f;
+        }
+
+        /* Banner Text */
+        .banner-text {
+            max-width: 600px;
+            padding: 80px 40px;
+            margin: 30px 90px;
+        }
+
+        .banner-text h5 {
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: #e7b606;
+        }
+
+        .banner-text p {
+            font-size: 24px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .banner-text h6 {
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        .banner-text button {
+            padding: 12px 25px;
+            font-size: 14px;
+            background-color: #fa8509;
+            border: none;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 30px;
+        }
+
+        .banner-text button i {
+            font-weight: 900;
+        }
+
+        /* New Section */
+        .new-section {
+            padding: 60px;
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 25px;
+                flex-wrap: wrap;
+                align-items: center;
+
+            }
+
+            .nav-list {
+                width: 100%;
+                justify-content: center;
+                margin-top: 15px;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .social-header {
+                width: 100%;
+                justify-content: center;
+                margin-top: 15px;
+            }
+
+            .logo {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .banner-text {
+                padding: 60px 20px;
+                margin: 40px auto;
+                text-align: center;
+
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-list li {
+                font-size: 12px;
+            }
+
+            .banner-text p {
+                font-size: 18px;
+                text-align: center;
+
+            }
+
+            .banner-text button {
+                padding: 10px 20px;
+                font-size: 12px;
+                margin: 40px auto;
+
+            }
+        }
+
+        .new-section {
+            padding: 60px 20px;
+            text-align: center;
+            background: #fff;
+            color: #111;
+        }
+
+        .new-section h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .new-section p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        /* Container for all cards */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+
+        .cards {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            width: 300px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+
+        .cards:hover {
+            transform: translateY(-10px);
+        }
+
+
+        .cards img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+
+        }
+
+
+        .cards h2 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .cards h3 {
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .cards .social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .cards .social i {
+            color: #555;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .cards .social i:hover {
+            color: #f4c10f;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .video-section {
+            padding: 80px 20px;
+            background: #ffffff;
+            text-align: center;
+            color: #111;
+        }
+
+        .video-section h4 {
+            color: #f4c10f;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .video-section h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        /* Video Container */
+        .video-wrapper {
+            max-width: 900px;
+            margin: auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Video Style */
+        .video-wrapper video {
+            width: 100%;
+            height: 300px;
+            display: block;
+            border-radius: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .video-section h2 {
+                font-size: 24px;
+            }
+        }
+
+
+        /* ================= PRODUCT SECTION ================= */
+        .product-section {
+            padding: 70px 8%;
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .product-section h2 {
+            font-size: 34px;
+            margin-bottom: 50px;
+            color: #111;
+        }
+
+        /* ================= GRID ================= */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            justify-items: center;
+        }
+
+        /* ================= CARD ================= */
+        .product-card {
+            background: #ffffff;
+            border-radius: 22px;
+            padding: 25px;
+            width: 100%;
+            max-width: 320px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-14px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ================= IMAGE ================= */
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ================= TEXT ================= */
+        .product-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #111;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff9800;
+            margin-bottom: 6px;
+        }
+
+        .rating {
+            font-size: 15px;
+            margin-bottom: 18px;
+            color: #ff9800;
+        }
+
+        /* ================= BUTTON GROUP ================= */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        /* Buy Now */
+        .buy-btn {
+            padding: 12px 26px;
+            background: linear-gradient(135deg, #ff9800, #ffb347);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            background: linear-gradient(135deg, #e68900, #ff9800);
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        /* Tablet */
+        @media (max-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+
+            .product-section h2 {
+                font-size: 30px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .product-section {
+                padding: 50px 20px;
+                margin: 30px;
+
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+
+            }
+
+            .product-card {
+                max-width: 100%;
+            }
+
+            .product-section h2 {
+                font-size: 26px;
+            }
+        }
+
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 90px 10%;
+            margin-left: 70px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .about-text h4 {
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .about-text h2 {
+            font-size: 36px;
+            color: #2f2f2f;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .about-text button {
+            padding: 12px 30px;
+            background-color: #e68900;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .about-text button:hover {
+            background-color: red;
+            transform: translateY(-2px);
+        }
+
+        .about-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-img img {
+            max-width: 100%;
+            width: 420px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 📱 Responsive */
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                margin: 40px auto;
+            }
+
+            .about-text {
+                max-width: 100%;
+            }
+
+            .about-img img {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+
+        .m-card {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 80px 10%;
+            flex-wrap: wrap;
+        }
+
+        .middle-card {
+            background-color: #ffffff;
+            width: 300px;
+            height: auto;
+            padding: 30px 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .middle-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .middle-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 4px solid #e68900;
+        }
+
+        .middle-card h2 {
+            font-size: 22px;
+            color: #2f2f2f;
+            margin-bottom: 5px;
+        }
+
+        .middle-card h4 {
+            font-size: 14px;
+            color: #e68900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .middle-card p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* 📱 Responsive */
+        @media (max-width: 768px) {
+            .m-card {
+                padding: 60px 5%;
+            }
+
+            .middle-card {
+                width: 100%;
+                max-width: 360px;
+            }
+        }
+
+        /* section background white */
+        .darkimg {
+            padding: 80px 10%;
+            background-color: #ffffff;
+        }
+
+        /* cards container */
+        .dark-card {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* single card */
+        .card {
+            position: relative;
+            width: 300px;
+            height: 380px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* card image */
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* black overlay on image */
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, 0.8),
+                    rgba(0, 0, 0, 0.3));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 30px;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* text styles */
+        .overlay h2 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .overlay p {
+            font-size: 16px;
+            color: #e68900;
+            font-weight: bold;
+        }
+
+        /* hover effect */
+        .card:hover img {
+            transform: scale(1.05);
+            transition: transform 0.4s ease;
+        }
+
+        /* responsive */
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+                max-width: 340px;
+            }
+        }
+
+        footer {
+            padding: 70px 10% 30px;
+            color: #fff;
+            font-family: Arial, sans-serif;
+
+            /* your background */
+            background:
+                linear-gradient(to right,
+                    hwb(0 1% 99%),
+                    rgba(255, 255, 255, 0.3)),
+                url("https://static.vecteezy.com/system/resources/previews/011/332/525/large_2x/hand-drawn-coffee-concept-background-free-vector.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* layout */
+        footer {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        /* logo + social */
+        .social h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #e68900;
+        }
+
+        .social i {
+            font-size: 20px;
+            margin-right: 15px;
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social i:hover {
+            color: #e68900;
+            transform: translateY(-3px);
+        }
+
+        /* headings */
+        footer h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* links text */
+        footer h4 {
+            font-size: 15px;
+            font-weight: normal;
+            margin-bottom: 10px;
+            color: #eee;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        footer h4:hover {
+            color: #e68900;
+        }
+
+        /* hr */
+        footer hr {
+            grid-column: 1 / -1;
+            border: none;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.4);
+            margin: 40px 0 20px;
+        }
+
+        /* bottom text */
+        footer p {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 14px;
+            color: #f0f0f0;
+        }
+
+        /* 📱 responsive */
+        @media (max-width: 768px) {
+            footer {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social i {
+                margin-right: 10px;
+            }
+        }
+
+        /* ================= VIDEO SECTION ================= */
+        .video-section {
+            padding: 80px 8%;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .video-section h4 {
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ff9800;
+            margin-bottom: 10px;
+        }
+
+        .video-section h2 {
+            font-size: 36px;
+            color: #111;
+            margin-bottom: 50px;
+        }
+
+        /* ================= VIDEO WRAPPER ================= */
+        .video-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        /* responsive video */
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        /* Tablet */
+        @media (max-width: 992px) {
+            .video-section h2 {
+                font-size: 30px;
+            }
+
+            .video-wrapper {
+                max-width: 100%;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 576px) {
+            .video-section {
+                padding: 60px 20px;
+            }
+
+            .video-section h2 {
+                font-size: 26px;
+            }
+
+            .video-section h4 {
+                font-size: 14px;
+            }
+        }
+
+        /* button container (optional but recommended) */
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        /* common button style */
+        .button-group button {
+            padding: 10px 28px;
+            border-radius: 30px;
+            border: 2px solid #ff9800;
+            background: transparent;
+            color: #ff9800;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* hover */
+        .button-group button:hover {
+            background: #ff9800;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* active button */
+        .button-group button.active {
+            background: #ff9800;
+            color: #fff;
+        }
+
+        /* 📱 responsive */
+        @media (max-width: 576px) {
+            .button-group button {
+                padding: 8px 20px;
+                font-size: 14px;
+            }
+        }
+
+
+        .main-section {
+            background: #f7f4ef;
+            padding: 80px 0;
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+        }
+
+        /* Top Row */
+        .top-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 80px;
+        }
+
+        .left-content {
+            width: 45%;
+        }
+
+        .left-content small {
+            color: #b08968;
+            font-weight: bold;
+        }
+
+        .left-content h2 {
+            margin: 15px 0 25px;
+            font-size: 32px;
+        }
+
+        .feature {
+            margin-bottom: 20px;
+        }
+
+        .feature h4 {
+            font-size: 18px;
+        }
+
+        .feature p {
+            color: #555;
+        }
+
+        /* Images */
+        .right-images {
+            width: 45%;
+
+            position: relative;
+        }
+
+        .img-main {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .img-small {
+            width: 45%;
+            position: absolute;
+            right: -20px;
+            margin: 20px;
+            top: 20px;
+            border-radius: 12px;
+        }
+
+        .img-small.bottom {
+            top: 160px;
+        }
+
+        /* Bottom Row */
+        .bottom-row {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .image-box img {
+            width: 420px;
+            border-radius: 12px;
+        }
+
+        .text-box small {
+            color: #b08968;
+            font-weight: bold;
+        }
+
+        .text-box h2 {
+            margin: 15px 0;
+        }
+
+        .text-box ul li {
+            list-style: none;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-section">
+        <header class="header">
+            <div class="logo">Shopio.</div>
+            <nav>
+                <ul class="nav-list">
+                    <li>Home</li>
+                    <li>Shop</li>
+                    <li>Product</li>
+                    <li>Blog</li>
+                    <li>Hot Deal</li>
+                </ul>
+            </nav>
+            <div class="social-header">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-user"></i>
+                <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+        </header>
+
+        <div class="banner-text">
+            <h5>ONLINE EXCLUSIVE</h5>
+            <p>Tea, Herbal Teas and Spices of Excellent Quality</p>
+            <h6>About Your Choices</h6>
+            <button>View Collection <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <section class="main-section">
+        <div class="container">
+
+            <!-- Top Row -->
+            <div class="top-row">
+                <div class="left-content">
+                    <small>ABOUT US</small>
+                    <h2>How We Made Coffee</h2>
+
+                    <div class="feature">
+                        <h4>☕ Organic Coffee Seed</h4>
+                        <p>We will help you to get result the most you dreamed of.</p>
+                    </div>
+
+                    <div class="feature">
+                        <h4>⚙️ High Tech Machine</h4>
+                        <p>We will help you to get result the most you dreamed of.</p>
+                    </div>
+
+                    <div class="feature">
+                        <h4>🔥 Best Traditional Flavors</h4>
+                        <p>We will help you to get result the most you dreamed of.</p>
+                    </div>
+                </div>
+
+                <div class="right-images">
+                    <img src="https://static.vecteezy.com/system/resources/previews/025/282/026/non_2x/stock-of-mix-a-cup-coffee-latte-more-motive-top-view-foodgraphy-generative-ai-photo.jpg"
+                        class="img-main">
+                    <img src="https://img.freepik.com/premium-photo/latte-coffee_785660-4306.jpg" class="img-small">
+                    <img src="https://wallup.net/wp-content/uploads/2017/11/23/417519-drink-coffee.jpg"
+                        class="img-small bottom">
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="bottom-row">
+                <div class="image-box">
+                    <img src="https://img.freepik.com/premium-photo/latte-art-cappuccino_1031776-27667.jpg?w=1480">
+                </div>
+
+                <div class="text-box">
+                    <small>WHY CHOOSE US</small>
+                    <h2>Best in taste, best in coffee</h2>
+
+                    <ul>
+                        <li>☕ Original Taste</li>
+                        <li>⭐ Premium Coffee</li>
+                        <li>🌿 100% Organic</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="new-section">
+        <h2 style="color:#fa8509">Our Team Member</h2>
+        <p>This section does not have the background image from the top banner.</p>
+
+        <div class="card-container">
+            <div class="cards">
+                <img src="https://wallpapercave.com/wp/wp5608455.jpg" alt="shivraja">
+                <h2><b>Shivaji Maharaaj</b></h2>
+                <h3>Chhatrapati Shivaji Maharaj</h3>
+                <div class="social">
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+
+            <div class="cards">
+                <img src="https://cdn.dollsofindia.com/images/p/large_thumbnails/people-posters/bhagat-singh-GA49.jpg"
+                    alt="azad singh">
+                <h2><b>bagat Singh</b></h2>
+                <h3>Team Member</h3>
+                <div class="social">
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+
+            <div class="cards">
+                <img src="https://i.pinimg.com/originals/f8/08/a8/f808a84b0903998e5c3729a3715d64de.jpg"
+                    alt="dr aabedekar">
+                <h2><b>jhansi ki rani</b></h2>
+                <h3>co-leader</h3>
+                <div class="social">
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <h4>What's the difference?</h4>
+        <h2>The Guide for Beginners</h2>
+
+        <div class="video-wrapper">
+            <video controls poster="https://i.ytimg.com/vi/D0WRagaIBvY/maxresdefault.jpg">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4
+" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+    <section class="product-section">
+        <h2>Top Products</h2>
+        <div class="button-group">
+            <button class="active">Featured</button>
+            <button>Bestseller</button>
+            <button>Latest</button>
+        </div>
+        <div class="product-grid">
+
+
+
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/61d6fnleZfL._AC_.jpg" alt="Headphones">
+                <h3>Wireless Headphones</h3>
+                <p class="price">₹2,999</p>
+                <div class="rating">⭐⭐⭐⭐☆</div>
+
+                <div class="btn-group">
+
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/61VbKHdE0rL._SL1500_.jpg" alt="Smart Watch">
+                <h3>Smart Watch</h3>
+                <p class="price">₹4,499</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+
+                <div class="btn-group">
+
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/61nPiOOv9BL._SL1500_.jpg" alt="Shoes">
+                <h3>Running Shoes</h3>
+                <p class="price">₹3,199</p>
+                <div class="rating">⭐⭐⭐⭐☆</div>
+
+                <div class="btn-group">
+
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="about-section">
+        <div class="about-text">
+            <h4 style="color: #e68900;">New Arrival</h4>
+            <h2>Fresh Coffee And Refresh Memories</h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque provident quasi doloremque, earum
+                architecto eius quisquam maiores nemo fugit et dignissimos quas accusantium animi, cupiditate, porro
+                mollitia impedit dolorum beatae.</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="about-img">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.HaxeXsFSk4Ck2ygZmn13zgHaFj?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
+                alt="about-img">
+        </div>
+    </div>
+
+
+    <section class="m-card">
+        <div class="middle-card">
+            <img src="https://img.freepik.com/premium-photo/portrait-successful-programmer-game-developer-coder-guy-uses-computer-laptop-work-game-design-hacker-boy-generative-ai-cyber-gamer_117038-7597.jpg?w=740"
+                alt="">
+            <h2>Suraj</h2>
+            <h4>web devloper</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis illum reprehenderit tempora sit
+                dolorum in rem.</p>
+        </div>
+        <div class="middle-card">
+            <img src="https://img.freepik.com/premium-photo/portrait-successful-programmer-game-developer-coder-guy-uses-computer-laptop-work-game-design-hacker-boy-generative-ai-cyber-gamer_117038-7602.jpg"
+                alt="">
+            <h2>Suraj</h2>
+            <h4>web devloper</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis illum reprehenderit tempora sit
+                dolorum in rem.</p>
+        </div>
+        <div class="middle-card">
+            <img src="https://img.freepik.com/premium-photo/view-3d-boy-using-laptop_1124848-5590.jpg" alt="">
+            <h2>Suraj</h2>
+            <h4>web devloper</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis illum reprehenderit tempora sit
+                dolorum in rem.</p>
+        </div>
+
+    </section>
+
+
+    <section class="darkimg">
+        <div class="dark-card">
+
+            <div class="card">
+                <img src="https://img.freepik.com/free-photo/rqyhuff6clhj4wpwei9l5b0chbcjqyvxoeuojqbzjpg_181624-60296.jpg?t=st=1766471942~exp=1766475542~hmac=4f2d0341605a4ba5e5af09d3f8fb05a1615ff8156567009b0b3515afc511998b&w=1480"
+                    alt="">
+                <div class="overlay">
+                    <h2>Contribute of lesson...</h2>
+                    <p>2014</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://img.freepik.com/premium-photo/cup-coffee-with-whipped-cream-top-it_861622-137.jpg?w=1480"
+                    alt="">
+                <div class="overlay">
+                    <h2>Contribute of lesson...</h2>
+                    <p>2014</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://img.freepik.com/premium-photo/cold-coffee-with-ice-milk-glass-whipped-cream-top_255506-26.jpg?w=1480"
+                    alt="">
+                <div class="overlay">
+                    <h2>Contribute of lesson...</h2>
+                    <p>2014</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+
+        <div class="social">
+            <h2>Shopio.</h2>
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+        </div>
+
+
+        <div class="about-footer">
+            <h2>Company</h2>
+            <h4>coffe company</h4>
+            <h4>Cofee material</h4>
+            <h4>cofee shop</h4>
+        </div>
+
+
+        <div class="Services">
+            <h2>Guide</h2>
+            <h4>Complaint</h4>
+            <h4>staff safety</h4>
+            <h4>time consuming</h4>
+        </div>
+        <div class="Contact">
+            <h2>contact us</h2>
+            <h4>+9370944696</h4>
+            <h4>100% regarding helping</h4>
+            <h4>itxsurajofficial@gmail.com</h4>
+        </div>
+
+        <hr>
+
+
+        <p>2025 coffe shope. privacy police Terms And condition.</p>
+
+
+    </footer>
+
+
+</body>
+
+</html>
